@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+    <!-- everything in her is managed by Vue -->
+      <h1>Checkers</h1>
+      <h3><button v-if="playersAvailable > 0 && player == 0" @click="joinGame()">Join Game</button></h3>
+      <h3 v-if="player == 1">You are RED</h3>
+      <h3 v-if="player == 2">You are BLACK</h3>
+      <h3 v-if="player == 1 && turn == 1">YOUR TURN</h3>
+      <h3 v-if="player == 1 && turn == 0">Waiting for another player</h3>
+      <h3 v-if="player == 1 && turn == 2">OPPONENT'S TURN</h3>
+      <h3 v-if="player == 2 && turn == 1">OPPONENT'S TURN</h3>
+      <h3 v-if="player == 2 && turn == 2">YOUR TURN</h3>
+      <h3 v-if="player == 0 && turn != 0">Game is full. Please Spectate</h3>
+      <h3 v-if="player == winner">YOU WIN!</h3>
+      <h3 v-if="player == 0 && winner == 1">Red Wins!</h3>
+      <h3 v-if="player == 0 && winner == 2">Black Wins!</h3>
+      <div class="grid">
+	<div v-for="square, i in squares" @click="selectSquare(i)" class="square" v-bind:style="{ backgroundColor: squares[i] != -1 ? '#f5e1d0' : '#faf3ed' }">
+	  <div v-if="squares[i] == 1" class="redchecker"></div>
+	  <div v-if="squares[i] == 2" class="blackchecker"></div>
+	  <div v-if="squares[i] == 3" class="redkingchecker"></div>
+	  <div v-if="squares[i] == 4" class="blackkingchecker"></div>
+	</div>
+      </div>
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"></script>
+  <script src="app.js"></script>
+</body>
+<html>

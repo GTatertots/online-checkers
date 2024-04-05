@@ -1,0 +1,61 @@
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  padding: 10px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.square {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  aspect-ratio: 1;
+}
+
+.square:hover {
+  background-color: #fae8c6 !important;
+}
+
+.redchecker {
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.blackchecker {
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.redkingchecker {
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 100%;
+  background-color: orange;
+}
+
+.blackkingchecker {
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 100%;
+  background-color: gray;
+}
